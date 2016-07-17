@@ -432,7 +432,7 @@ public abstract class AbstractActivity extends AbstractCoreActivity {
 
 
             if (apiUrl.contains("develop")){
-                doValidIsDebug(apiUrl, HomeBaen.class);
+                doValidIsDebug(apiUrl, clazz);
                 return;
             }
 
@@ -628,6 +628,10 @@ public abstract class AbstractActivity extends AbstractCoreActivity {
             if (RequestAPI.API_JZB_HOME_INDEX.contains(url)) {
                 //加载周边的让家数据
                 loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "home_data.json", clazz));
+            }else if(RequestAPI.API_JZB_NEWS_GROUP.contains(url)){
+                loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "news_group.json", clazz));
+            }else if (RequestAPI.API_JZB_NEWS_LIST.contains(url)){
+                loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "news_list.json", clazz));
             }
         }
 

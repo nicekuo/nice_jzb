@@ -92,6 +92,8 @@ public class RequestAPI {
     * 临时开发使用的url
     * */
     public static final String API_JZB_HOME_INDEX = "develop_home/index";
+    public static final String API_JZB_NEWS_GROUP = "develop_news/group";
+    public static final String API_JZB_NEWS_LIST = "develop_news/list";
 
 
 

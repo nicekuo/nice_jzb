@@ -13,17 +13,14 @@ import android.widget.LinearLayout;
 
 import com.core.bean.BaseBean;
 import com.core.nice_view.ViewBannerAutoScroll;
-import com.core.util.IntentUtil;
 import com.nice.jzb.R;
 import com.nice.jzb.background.AppInfo;
 import com.nice.jzb.background.ConfigValue;
-import com.nice.jzb.background.JICHEApplication;
 import com.nice.jzb.background.RequestAPI;
 import com.nice.jzb.core.AbstractActivity;
 import com.nice.jzb.core.AbstractFragment;
-import com.nice.jzb.ui.ActivityHideEntrance_;
 import com.nice.jzb.ui.ErrorViewForReload;
-import com.nice.jzb.ui.setting.LoginActivity_;
+import com.nice.jzb.ui.news.NewsListItemBean;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
@@ -42,31 +39,24 @@ import java.util.Map;
 public class MainHomeFragmentNew extends AbstractFragment {
 
 
-    @ViewById(R.id.id_tv_login)
-    View id_tv_login;
-
-
     @ViewById(R.id.content_container)
     LinearLayout content_container;
 
     @ViewById(R.id.errorView)
     ErrorViewForReload errorView;
 
+    @ViewById(R.id.message)
+    ImageView message;
+
+    @ViewById(R.id.xiaoren)
+    ImageView xiaoren;
+
+
 
     @AfterViews
     void initView() {
-        setTitleLeftImageButton(R.drawable.icon_message, new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        setTitleRightImageButton(R.drawable.icon_xiaoren, new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+        message.setImageResource(R.drawable.icon_message);
+        xiaoren.setImageResource(R.drawable.icon_xiaoren);
         errorView.register(new ErrorViewForReload.OnClickForReloadListener() {
             @Override
             public void onClickReload() {
@@ -149,7 +139,7 @@ public class MainHomeFragmentNew extends AbstractFragment {
             homeTitle.setData(R.drawable.icon_news, homeBaen.getData().getNews().getTitle());
             content_container.addView(homeTitle);
             if (homeBaen.getData().getNews().getNews_list().size() > 0) {
-                for (HomeBaen.DataBean.NewsBean.NewsListBean itemBean : homeBaen.getData().getNews().getNews_list()) {
+                for (NewsListItemBean itemBean : homeBaen.getData().getNews().getNews_list()) {
                     ViewHomeNewsitem newsitem = new ViewHomeNewsitem(getActivity());
                     newsitem.setData(itemBean);
                     content_container.addView(newsitem);
@@ -191,14 +181,6 @@ public class MainHomeFragmentNew extends AbstractFragment {
             }
         }
     };
-
-    private void updateLoginButtonVisible() {
-        if (JICHEApplication.getInstance().getLoginState()) {
-            id_tv_login.setVisibility(View.GONE);
-        } else {
-            id_tv_login.setVisibility(View.VISIBLE);
-        }
-    }
 
     public void registerBroadCastReceiver() {
         IntentFilter intentFilter = new IntentFilter();

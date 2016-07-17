@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.core.widget.image.SFImageView;
 import com.nice.jzb.R;
+import com.nice.jzb.ui.news.NewsListItemBean;
 
 /**
  * Created by ${nice} on ${2016年04月29日14:09:09}.
@@ -43,7 +44,7 @@ public class ViewHomeNewsitem extends LinearLayout {
         heart = (TextView) findViewById(R.id.heart);
     }
 
-    public void setData(HomeBaen.DataBean.NewsBean.NewsListBean bean){
+    public void setData(NewsListItemBean bean){
         image.SFSetImageUrl(bean.getImg());
         content.setText(bean.getContent());
         source.setText(bean.getSource());

@@ -38,7 +38,6 @@ import okhttp3.OkHttpClient;
  */
 public class JICHEApplication extends CoreApplication {
     private static JICHEApplication mApplication;
-    public LocationService locationService;
     private SQLiteDatabase db;
     private Account account;
 
@@ -62,7 +61,6 @@ public class JICHEApplication extends CoreApplication {
         /***
          * 初始化定位sdk，建议在Application中创建
          */
-        initLocaltionService();
 
         AppInfo.retrieveAppInfo(this);
 
@@ -107,13 +105,6 @@ public class JICHEApplication extends CoreApplication {
         }
     }
 
-    private void initLocaltionService() {
-        locationService = new LocationService(getApplicationContext());
-        LocationClientOption option = new LocationClientOption();
-        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
-        option.setCoorType("bd09ll");
-        locationService.setLocationOption(option);
-    }
 
     public static JICHEApplication getInstance() {
         return mApplication;

@@ -1,6 +1,7 @@
 package com.nice.jzb.ui.main;
 
 import com.core.bean.BaseBean;
+import com.nice.jzb.ui.news.NewsListItemBean;
 
 import java.util.List;
 
@@ -81,7 +82,7 @@ public class HomeBaen extends BaseBean {
              * heart_count : 43
              */
 
-            private List<NewsListBean> news_list;
+            private List<NewsListItemBean> news_list;
 
             public String getTitle() {
                 return title;
@@ -91,61 +92,14 @@ public class HomeBaen extends BaseBean {
                 this.title = title;
             }
 
-            public List<NewsListBean> getNews_list() {
+            public List<NewsListItemBean> getNews_list() {
                 return news_list;
             }
 
-            public void setNews_list(List<NewsListBean> news_list) {
+            public void setNews_list(List<NewsListItemBean> news_list) {
                 this.news_list = news_list;
             }
 
-            public static class NewsListBean {
-                private String img;
-                private String content;
-                private String source;
-                private int like_count;
-                private int heart_count;
-
-                public String getImg() {
-                    return img;
-                }
-
-                public void setImg(String img) {
-                    this.img = img;
-                }
-
-                public String getContent() {
-                    return content;
-                }
-
-                public void setContent(String content) {
-                    this.content = content;
-                }
-
-                public String getSource() {
-                    return source;
-                }
-
-                public void setSource(String source) {
-                    this.source = source;
-                }
-
-                public int getLike_count() {
-                    return like_count;
-                }
-
-                public void setLike_count(int like_count) {
-                    this.like_count = like_count;
-                }
-
-                public int getHeart_count() {
-                    return heart_count;
-                }
-
-                public void setHeart_count(int heart_count) {
-                    this.heart_count = heart_count;
-                }
-            }
         }
 
         public static class DoctorBean {
