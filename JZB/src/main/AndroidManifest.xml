@@ -199,14 +199,14 @@
         <activity
             android:name="com.nice.jzb.ui.setting.ActivtyModifyPersonalInfo_"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustPan|stateHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <activity
             android:name="com.nice.jzb.ui.ActivityHideEntrance_"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustPan|stateHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
 
         <!-- 用于网络测试的 -->
@@ -219,6 +219,13 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </service>
+
+
+        <activity
+            android:name=".ui.main.ActivityWebView_"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
 
     </application>

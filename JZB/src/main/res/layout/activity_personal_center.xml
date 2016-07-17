@@ -26,11 +26,6 @@
                 android:layout_gravity="center"
                 />
 
-            <View
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:background="@drawable/circlr_up_blue" />
-
         </FrameLayout>
 
         <TextView
@@ -49,7 +44,6 @@
             android:layout_width="60dp"
             android:layout_height="22dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/icon_member"
             android:textColor="@color/white"
             android:textSize="9sp"
             android:singleLine="true"

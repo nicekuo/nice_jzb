@@ -43,6 +43,8 @@ import com.core.wigets.TitleView;
 import com.nice.jzb.background.ConfigValue;
 import com.nice.jzb.background.JICHEApplication;
 import com.nice.jzb.background.RequestAPI;
+import com.nice.jzb.test.DataCreateFactory;
+import com.nice.jzb.ui.main.HomeBaen;
 import com.nice.jzb.ui.main.UpgradeBean;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.Callback;
@@ -422,6 +424,27 @@ public abstract class AbstractActivity extends AbstractCoreActivity {
             if (isLoading) {
                 showLoadDialog(true);
             }
+
+
+
+
+
+
+
+            if (apiUrl.contains("develop")){
+                doValidIsDebug(apiUrl, HomeBaen.class);
+                return;
+            }
+
+
+
+
+
+
+
+
+
+
 //            if (isPost) {
 //                doRequestPOSTByOkHttpUtils(absoluteUrl, params);
 //            } else {
@@ -599,7 +622,19 @@ public abstract class AbstractActivity extends AbstractCoreActivity {
             return baos.toString();
         }
 
+
+        void doValidIsDebug(String url,Class<? extends BaseBean> clazz) {
+            dissmissWaitingDialog();
+            if (RequestAPI.API_JZB_HOME_INDEX.contains(url)) {
+                //加载周边的让家数据
+                loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "home_data.json", clazz));
+            }
+        }
+
+
     }
+
+
 
     /**
      * @param cancelable 是否支持取消

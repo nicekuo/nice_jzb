@@ -21,7 +21,7 @@ public class ToastUtil {
 	
 	/**
 	 * @Description: 显示Toast消息
-	 * @param strId
+	 * @param strIdToastUtil
 	 */
 	public static void showToastMessage(Context context,int strId){
 		Toast.makeText(context, context.getString(strId), Toast.LENGTH_SHORT).show();

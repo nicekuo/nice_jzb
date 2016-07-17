@@ -83,6 +83,21 @@ public class RequestAPI {
 
 
 
+
+
+
+
+
+    /*
+    * 临时开发使用的url
+    * */
+    public static final String API_JZB_HOME_INDEX = "develop_home/index";
+
+
+
+
+
+
     private static List<String> needTokenURLList = Arrays.asList(API_MEMBER_CHANGE_CAR, API_ADD_CAR_TO_MY_LIST, API_DELETE_MY_CAR, API_MY_CAR_LIST,
             API_ORDER_DETAIL_BY_ID, API_COUPON_GET_COUPON, API_ORDER_INFO, API_ADD_GOODS_COMMENT, API_GET_FAVORIATE_SHOPS, API_CHANGE_PASSWORD,
             API_DELETE_FAVORITE_SHOPS, API_ADD_FAVORITE_SHOPS, API_GET_MINE_ALL, API_CHECK_ORDER, API_GET_SHOP_SERVICES, API_ORDER_CREATE, API_ORDE_PAY,

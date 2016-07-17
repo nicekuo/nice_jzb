@@ -110,7 +110,7 @@ public class TitleView extends FrameLayout {
     }
 
     public void setTitleLeftImageButton(int imgID, OnClickListener listener) {
-        mLeftBtn.setBackgroundResource(imgID);
+        mLeftBtn.setImageResource(imgID);
         mLeftBtn.setVisibility(View.VISIBLE);
         mOnLeftButtonClickListener = listener;
     }
