@@ -94,6 +94,8 @@ public class RequestAPI {
     public static final String API_JZB_HOME_INDEX = "develop_home/index";
     public static final String API_JZB_NEWS_GROUP = "develop_news/group";
     public static final String API_JZB_NEWS_LIST = "develop_news/list";
+    public static final String API_JZB_DOCTORS_GROUP = "develop_doctors/group";
+    public static final String API_JZB_DOCTORS_LIST = "develop_doctors/list";
 
 
 

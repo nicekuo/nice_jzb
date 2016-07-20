@@ -20,6 +20,7 @@ import com.nice.jzb.background.RequestAPI;
 import com.nice.jzb.core.AbstractActivity;
 import com.nice.jzb.core.AbstractFragment;
 import com.nice.jzb.ui.ErrorViewForReload;
+import com.nice.jzb.ui.doctors.DoctorItemBean;
 import com.nice.jzb.ui.news.NewsListItemBean;
 
 import org.androidannotations.annotations.AfterViews;
@@ -156,7 +157,7 @@ public class MainHomeFragmentNew extends AbstractFragment {
             int width = AppInfo.width;
 
             if (homeBaen.getData().getDoctor().getDoctor_list().size() > 0) {
-                for (HomeBaen.DataBean.DoctorBean.DoctorListBean itemBean : homeBaen.getData().getDoctor().getDoctor_list()) {
+                for (DoctorItemBean itemBean : homeBaen.getData().getDoctor().getDoctor_list()) {
                     ViewHomeDoctorItem item = new ViewHomeDoctorItem(getActivity());
                     item.setData(itemBean);
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width / 3, ViewGroup.LayoutParams.WRAP_CONTENT);

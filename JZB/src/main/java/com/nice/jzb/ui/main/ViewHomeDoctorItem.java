@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.core.widget.image.SFImageView;
 import com.nice.jzb.R;
+import com.nice.jzb.ui.doctors.DoctorItemBean;
 
 /**
  * Created by ${nice} on ${2016年04月29日14:09:09}.
@@ -40,7 +41,7 @@ public class ViewHomeDoctorItem extends LinearLayout {
 
     }
 
-    public void setData(HomeBaen.DataBean.DoctorBean.DoctorListBean bean){
+    public void setData(DoctorItemBean bean){
         avatar.SFSetImageUrl(bean.getAvatar());
         name.setText(bean.getName());
         title.setText(bean.getTitle());

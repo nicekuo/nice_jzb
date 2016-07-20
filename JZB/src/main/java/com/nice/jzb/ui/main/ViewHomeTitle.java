@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nice.jzb.R;
+import com.nice.jzb.ui.doctors.ActivityDoctorsGroup_;
 import com.nice.jzb.ui.news.ActivityNewsGroup_;
 
 /**
@@ -40,13 +41,17 @@ public class ViewHomeTitle extends LinearLayout {
         title = (TextView) findViewById(R.id.title);
     }
 
-    public void setData(int img_id,String title){
+    public void setData(final int img_id, String title){
         title_icon.setImageResource(img_id);
         this.title.setText(title);
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityNewsGroup_.intent(context).start();
+                if (R.drawable.icon_news == img_id){
+                    ActivityNewsGroup_.intent(context).start();
+                }else {
+                    ActivityDoctorsGroup_.intent(context).start();
+                }
             }
         });
     }

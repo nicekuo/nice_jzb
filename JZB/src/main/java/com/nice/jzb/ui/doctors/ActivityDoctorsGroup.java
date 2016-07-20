@@ -28,7 +28,7 @@ import java.util.Map;
  * Created by ${nice} on ${2016年04月29日14:09:09}.
  */
 
-@EActivity(R.layout.activity_news_group)
+@EActivity(R.layout.activity_doctors_group)
 public class ActivityDoctorsGroup extends AbstractActivity {
 
 
@@ -38,10 +38,10 @@ public class ActivityDoctorsGroup extends AbstractActivity {
     @ViewById(R.id.pager)
     ViewPager pager;
 
-    private List<NewsGroupListBean.DataBean.NewsGroupBean> groupBeanList = new ArrayList<>();
-    private List<ViewNewsIist> views = new ArrayList<ViewNewsIist>();
+    private List<DoctorsGroupListBean.DataBean.DoctorGroupBean> groupBeanList = new ArrayList<>();
+    private List<ViewDoctorIist> views = new ArrayList<ViewDoctorIist>();
 
-    private NewsGroupAdapter adapter;
+    private DoctorGroupAdapter adapter;
 
 
     @AfterViews
@@ -78,32 +78,33 @@ public class ActivityDoctorsGroup extends AbstractActivity {
 
             @Override
             public void loadSuccess(BaseBean bean) {
-                NewsGroupListBean listBean = (NewsGroupListBean) bean;
+                DoctorsGroupListBean listBean = (DoctorsGroupListBean) bean;
                 if (listBean != null) {
                     updateView(listBean);
                 }
             }
 
+
             @Override
             public void exception() {
 
             }
-        }.post(true, RequestAPI.API_JZB_NEWS_GROUP, params, NewsGroupListBean.class);
+        }.post(true, RequestAPI.API_JZB_DOCTORS_GROUP, params, DoctorsGroupListBean.class);
     }
 
 
-    private void updateView(NewsGroupListBean listBean) {
+    private void updateView(DoctorsGroupListBean listBean) {
 
         groupBeanList.clear();
-        groupBeanList.addAll(listBean.getData().getNews_group());
+        groupBeanList.addAll(listBean.getData().getDoctor_group());
         views.clear();
-        for (NewsGroupListBean.DataBean.NewsGroupBean groupBean : listBean.getData().getNews_group()) {
-            ViewNewsIist newsIist = new ViewNewsIist();
-            newsIist.setData(groupBean);
-            views.add(newsIist);
+        for (DoctorsGroupListBean.DataBean.DoctorGroupBean groupBean : listBean.getData().getDoctor_group()) {
+            ViewDoctorIist doctorIist = new ViewDoctorIist();
+            doctorIist.setData(groupBean);
+            views.add(doctorIist);
         }
 
-        adapter = new NewsGroupAdapter(getSupportFragmentManager());
+        adapter = new DoctorGroupAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
         tabStrip.setViewPager(pager);
         if (groupBeanList != null && groupBeanList.size() > 2) {
@@ -122,8 +123,8 @@ public class ActivityDoctorsGroup extends AbstractActivity {
         finish();
     }
 
-    class NewsGroupAdapter extends FragmentPagerAdapter {
-        public NewsGroupAdapter(FragmentManager fm) {
+    private class DoctorGroupAdapter extends FragmentPagerAdapter {
+        public DoctorGroupAdapter(FragmentManager fm) {
             super(fm);
         }
 

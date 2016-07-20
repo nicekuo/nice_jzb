@@ -632,6 +632,10 @@ public abstract class AbstractActivity extends AbstractCoreActivity {
                 loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "news_group.json", clazz));
             }else if (RequestAPI.API_JZB_NEWS_LIST.contains(url)){
                 loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "news_list.json", clazz));
+            }else if (RequestAPI.API_JZB_DOCTORS_GROUP.contains(url)){
+                loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "doctors_group.json", clazz));
+            }else if (RequestAPI.API_JZB_DOCTORS_LIST.contains(url)){
+                loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "doctor_list.json", clazz));
             }
         }
 

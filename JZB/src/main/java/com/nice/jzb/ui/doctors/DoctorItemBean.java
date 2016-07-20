@@ -1,9 +1,11 @@
 package com.nice.jzb.ui.doctors;
 
+import com.core.bean.BaseBean;
+
 /**
  * Created by admin on 2016/7/20.
  */
-public class DoctorItemBean {
+public class DoctorItemBean extends BaseBean {
     private String avatar;
     private String name;
     private String title;
