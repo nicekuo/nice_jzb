@@ -1,6 +1,7 @@
 package com.nice.jzb.ui.main;
 
 import com.core.bean.BaseBean;
+import com.nice.jzb.ui.doctors.DoctorItemBean;
 import com.nice.jzb.ui.news.NewsListItemBean;
 
 import java.util.List;
@@ -112,7 +113,7 @@ public class HomeBaen extends BaseBean {
              * doctor_id : 123456
              */
 
-            private List<DoctorListBean> doctor_list;
+            private List<DoctorItemBean> doctor_list;
 
             public String getTitle() {
                 return title;
@@ -122,61 +123,14 @@ public class HomeBaen extends BaseBean {
                 this.title = title;
             }
 
-            public List<DoctorListBean> getDoctor_list() {
+            public List<DoctorItemBean> getDoctor_list() {
                 return doctor_list;
             }
 
-            public void setDoctor_list(List<DoctorListBean> doctor_list) {
+            public void setDoctor_list(List<DoctorItemBean> doctor_list) {
                 this.doctor_list = doctor_list;
             }
 
-            public static class DoctorListBean {
-                private String avatar;
-                private String name;
-                private String title;
-                private String hospital;
-                private String doctor_id;
-
-                public String getAvatar() {
-                    return avatar;
-                }
-
-                public void setAvatar(String avatar) {
-                    this.avatar = avatar;
-                }
-
-                public String getName() {
-                    return name;
-                }
-
-                public void setName(String name) {
-                    this.name = name;
-                }
-
-                public String getTitle() {
-                    return title;
-                }
-
-                public void setTitle(String title) {
-                    this.title = title;
-                }
-
-                public String getHospital() {
-                    return hospital;
-                }
-
-                public void setHospital(String hospital) {
-                    this.hospital = hospital;
-                }
-
-                public String getDoctor_id() {
-                    return doctor_id;
-                }
-
-                public void setDoctor_id(String doctor_id) {
-                    this.doctor_id = doctor_id;
-                }
-            }
         }
 
         public static class BannerBean {
