@@ -25,13 +25,13 @@ public class DoctorListAdapter extends SFBaseAdapter<DoctorItemBean> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHomeDoctorItem newsitem = null;
+        ViewDoctorListItem doctorListItem = null;
         if (convertView == null){
-            newsitem = new ViewHomeDoctorItem(mContext);
+            doctorListItem = new ViewDoctorListItem(mContext);
         }else {
-            newsitem = (ViewHomeDoctorItem) convertView;
+            doctorListItem = (ViewDoctorListItem) convertView;
         }
-        newsitem.setData((DoctorItemBean) getItem(position));
-        return newsitem;
+        doctorListItem.setData((DoctorItemBean) getItem(position));
+        return doctorListItem;
     }
 }

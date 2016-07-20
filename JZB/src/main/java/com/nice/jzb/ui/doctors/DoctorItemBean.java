@@ -12,6 +12,16 @@ public class DoctorItemBean extends BaseBean {
     private String hospital;
     private String doctor_id;
 
+    public String getConsultation_times() {
+        return consultation_times;
+    }
+
+    public void setConsultation_times(String consultation_times) {
+        this.consultation_times = consultation_times;
+    }
+
+    private String consultation_times;
+
     public String getAvatar() {
         return avatar;
     }

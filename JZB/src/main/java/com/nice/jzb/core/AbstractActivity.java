@@ -626,7 +626,6 @@ public abstract class AbstractActivity extends AbstractCoreActivity {
         void doValidIsDebug(String url,Class<? extends BaseBean> clazz) {
             dissmissWaitingDialog();
             if (RequestAPI.API_JZB_HOME_INDEX.contains(url)) {
-                //加载周边的让家数据
                 loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "home_data.json", clazz));
             }else if(RequestAPI.API_JZB_NEWS_GROUP.contains(url)){
                 loadSuccess(DataCreateFactory.getDatas(AbstractActivity.this, "test_data", "news_group.json", clazz));
